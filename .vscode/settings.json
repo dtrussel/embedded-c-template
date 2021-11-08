@@ -1,5 +1,11 @@
 {
     "files.associations": {
-        "crc32.h": "c"
+        "crc32.h": "c",
+        "array": "c",
+        "deque": "c",
+        "forward_list": "c",
+        "list": "c",
+        "vector": "c",
+        "string_view": "c"
     }
 }

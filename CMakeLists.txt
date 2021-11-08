@@ -24,7 +24,8 @@ endif()
 # LIBRARY
 #####################################################################
 
-add_library(${PROJECT_NAME}
+add_library(${PROJECT_NAME} STATIC
+  src/mbed/containers/queue.c
   src/mbed/hash/crc32lookup.c)
 
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
@@ -59,6 +60,7 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 #####################################################################
 
 add_executable(${PROJECT_NAME}-tests
+  test/containers/queue.cpp
   test/hash/crc32lookup.cpp)
 
 target_link_libraries(${PROJECT_NAME}-tests
