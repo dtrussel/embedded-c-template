@@ -59,6 +59,8 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 # UNIT TESTS
 #####################################################################
 
+if(NOT MBED_DISABLE_UNIT_TESTS)
+
 add_executable(${PROJECT_NAME}-tests
   test/containers/queue.cpp
   test/hash/crc32lookup.cpp)
@@ -71,3 +73,5 @@ target_compile_options(${PROJECT_NAME}-tests
 
 target_compile_features(${PROJECT_NAME}
   PRIVATE cxx_std_17)
+
+endif()

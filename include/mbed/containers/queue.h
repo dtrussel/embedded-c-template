@@ -13,10 +13,11 @@ typedef struct mbed_Queue_ mbed_Queue;
 
 struct mbed_Queue_ {
   uint8_t* buffer;
-  size_t capacity; // capacity in number of elements
-  size_t front; // index
-  size_t back; // index
   size_t element_size; // byte size of one element
+  size_t capacity; // capacity in number of elements
+  volatile size_t size; // number of elements in the queue
+  volatile size_t front; // index
+  volatile size_t back; // index
 };
 
 mbed_Queue mbed_queue_create(uint8_t* buffer, size_t buffer_size, size_t element_size);
