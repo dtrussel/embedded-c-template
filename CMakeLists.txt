@@ -24,6 +24,15 @@ endif()
 # LIBRARY
 #####################################################################
 
+if(NOT MBED_DISABLE_TESTS)
+set(CMAKE_C_CLANG_TIDY "clang-tidy;-checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus*")
+set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus*")
+set(CMAKE_C_CPPCHECK "cppcheck;--enable=style")
+set(CMAKE_CPP_CPPCHECK "cppcheck;--enable=style")
+#set(CMAKE_C_CPPLINT "cpplint;--linelength=120 --verbose=5")
+#set(CMAKE_CXX_CPPLINT "cpplint;--linelength=120 --verbose=5")
+endif()
+
 add_library(${PROJECT_NAME} STATIC
   src/mbed/containers/queue.c
   src/mbed/hash/crc32lookup.c)
@@ -59,7 +68,7 @@ install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 # UNIT TESTS
 #####################################################################
 
-if(NOT MBED_DISABLE_UNIT_TESTS)
+if(NOT MBED_DISABLE_TESTS)
 
 add_executable(${PROJECT_NAME}-tests
   test/containers/queue.cpp

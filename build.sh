@@ -16,5 +16,5 @@ cd ..
 mkdir clang-arm-none-eabi
 cd clang-arm-none-eabi
 cmake -G Ninja -D CMAKE_TOOLCHAIN_FILE=${SCRIPT_DIR}/toolchain/gcc-arm-none-eabi.cmake \
-  -D MBED_DISABLE_UNIT_TESTS=1 ../..
+  -D MBED_DISABLE_TESTS=1 ../..
 ninja
