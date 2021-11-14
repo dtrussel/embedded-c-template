@@ -24,7 +24,7 @@ endif()
 # LIBRARY
 #####################################################################
 
-if(NOT MBED_DISABLE_TESTS)
+if(NOT MBED_DISABLE_CHECKS)
 set(CMAKE_C_CLANG_TIDY "clang-tidy;-checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus*")
 set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus*")
 set(CMAKE_C_CPPCHECK "cppcheck;--enable=style")
