@@ -22,6 +22,7 @@ llvm-profdata merge -sparse ${LLVM_PROFILE_FILE} -o ${MERGED_PROFILE_DATA}
 llvm-cov show ./mbed-tests --instr-profile=${MERGED_PROFILE_DATA} --format=html --output-dir=${BUILD_DIR}/coverage-report ${IGNORE_FILES_OPTIONS}
 llvm-cov report ./mbed-tests --instr-profile=${MERGED_PROFILE_DATA} ${IGNORE_FILES_OPTIONS}
 cd ..
+tar czf coverage-report.tar.gz ${BUILD_DIR}/coverage-report
 
 # target build
 mkdir -p gcc-arm-none-eabi
