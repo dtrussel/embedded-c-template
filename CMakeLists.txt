@@ -11,7 +11,7 @@ include(FetchContent)
 FetchContent_Declare(
   googletest
   GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG        release-1.10.0)
+  GIT_TAG        release-1.12.1)
 
 FetchContent_GetProperties(googletest)
 if(NOT googletest_POPULATED)
@@ -25,12 +25,12 @@ endif()
 #####################################################################
 
 if(NOT MBED_DISABLE_CHECKS)
-set(CMAKE_C_CLANG_TIDY "clang-tidy;-checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus*")
-set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=-*,clang-analyzer-*,-clang-analyzer-cplusplus*")
+set(CMAKE_C_CLANG_TIDY "clang-tidy;-checks=-*,bugprone-*")
+set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=-*,bugprone-*")
 set(CMAKE_C_CPPCHECK "cppcheck;--enable=style")
 set(CMAKE_CPP_CPPCHECK "cppcheck;--enable=style")
-#set(CMAKE_C_CPPLINT "cpplint;--linelength=120 --verbose=5")
-#set(CMAKE_CXX_CPPLINT "cpplint;--linelength=120 --verbose=5")
+set(CMAKE_C_CPPLINT "cpplint;--verbose=5")
+set(CMAKE_CXX_CPPLINT "cpplint;--verbose=5")
 endif()
 
 add_library(${PROJECT_NAME} STATIC
@@ -46,13 +46,11 @@ target_include_directories(${PROJECT_NAME}
   PUBLIC include
   PRIVATE src)
 
-#target_link_libraries(${PROJECT_NAME} PRIVATE Boost::boost)
-
 target_compile_options(${PROJECT_NAME}
   PRIVATE -Wall -Wextra -pedantic -Werror)
 
 target_compile_features(${PROJECT_NAME}
-  PRIVATE c_std_99)
+  PRIVATE c_std_11)
 
 include(GNUInstallDirs)
 
@@ -82,5 +80,7 @@ target_compile_options(${PROJECT_NAME}-tests
 
 target_compile_features(${PROJECT_NAME}
   PRIVATE cxx_std_17)
+
+add_test(NAME ${PROJECT_NAME}-test COMMAND ${PROJECT_NAME}-tests)
 
 endif()

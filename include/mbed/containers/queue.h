@@ -9,6 +9,8 @@ extern "C" {
 #include <stddef.h>
 #include <stdint.h>
 
+#define UNUSED(x) ((void)x)
+
 typedef struct mbed_Queue_ mbed_Queue;
 
 struct mbed_Queue_ {

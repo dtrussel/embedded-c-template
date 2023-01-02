@@ -23,7 +23,7 @@ set(TOOLCHAIN_LIB_DIR ${TOOLCHAIN_INSTALL_DIR}/${TOOLCHAIN}/lib)
 
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
-set(OBJECT_GEN_FLAGS "-O0 -mthumb -fno-builtin -ffunction-sections -fdata-sections -fomit-frame-pointer -mabi=aapcs")
+set(OBJECT_GEN_FLAGS "-O0 -fno-builtin -ffunction-sections -fdata-sections -fomit-frame-pointer -mabi=aapcs")
 
 set(CMAKE_C_FLAGS   "${OBJECT_GEN_FLAGS} ")
 set(CMAKE_CXX_FLAGS "${OBJECT_GEN_FLAGS} ")

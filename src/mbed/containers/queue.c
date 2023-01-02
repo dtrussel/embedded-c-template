@@ -81,7 +81,7 @@ uint8_t* mbed_queue_push_front(mbed_Queue* self, uint8_t* element) {
   return element;
 }
 
-bool mbed_queue_pop_back(mbed_Queue* self, uint8_t* element_out){
+bool mbed_queue_pop_back(mbed_Queue* self, uint8_t* element_out) {
   if (mbed_queue_is_empty(self)) {
     return false;
   }
@@ -93,7 +93,7 @@ bool mbed_queue_pop_back(mbed_Queue* self, uint8_t* element_out){
   return true;
 }
 
-bool mbed_queue_pop_front(mbed_Queue* self, uint8_t* element_out){
+bool mbed_queue_pop_front(mbed_Queue* self, uint8_t* element_out) {
   if (mbed_queue_is_empty(self)) {
     return false;
   }

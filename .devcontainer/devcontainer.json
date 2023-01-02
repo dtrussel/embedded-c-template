@@ -1,0 +1,10 @@
+{
+    "image": "dtrussel/embedded-c-cpp-builder:main",
+  
+    "customizations": {
+      "vscode": {
+        "extensions": ["ms-vscode.cpptools"]
+      }
+    }
+  }
+  
