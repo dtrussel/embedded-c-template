@@ -1,3 +1,3 @@
 # embedded-c-template
 
-[![Build Status](https://travis-ci.org/dtrussel/embedded-c-template.svg?branch=master)](https://travis-ci.org/dtrussel/embedded-c-template)
+[![Build Status](https://github.com/dtrussel/embedded-c-template/actions/workflows/cmake.yml/badge.svg)
