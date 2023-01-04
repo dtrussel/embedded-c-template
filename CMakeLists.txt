@@ -47,7 +47,7 @@ target_include_directories(${PROJECT_NAME}
   PRIVATE src)
 
 target_compile_options(${PROJECT_NAME}
-  PRIVATE -Wall -Wextra -pedantic -Werror)
+  PRIVATE ${MBED_FLAGS})
 
 target_compile_features(${PROJECT_NAME}
   PRIVATE c_std_11)
@@ -76,7 +76,7 @@ target_link_libraries(${PROJECT_NAME}-tests
   PRIVATE gtest_main ${PROJECT_NAME}::${PROJECT_NAME})
 
 target_compile_options(${PROJECT_NAME}-tests
-  PRIVATE -Wall -Wextra -pedantic -Werror)
+  PRIVATE ${MBED_FLAGS})
 
 target_compile_features(${PROJECT_NAME}
   PRIVATE cxx_std_17)
