@@ -47,7 +47,10 @@ target_include_directories(${PROJECT_NAME}
   PRIVATE src)
 
 target_compile_options(${PROJECT_NAME}
-  PRIVATE ${MBED_FLAGS})
+  PRIVATE ${MBED_WARNINGS_FLAGS} ${MBED_COVERAGE_FLAGS})
+
+target_link_options(${PROJECT_NAME}
+  PRIVATE ${MBED_COVERAGE_FLAGS})
 
 target_compile_features(${PROJECT_NAME}
   PRIVATE c_std_11)
@@ -76,7 +79,10 @@ target_link_libraries(${PROJECT_NAME}-tests
   PRIVATE gtest_main ${PROJECT_NAME}::${PROJECT_NAME})
 
 target_compile_options(${PROJECT_NAME}-tests
-  PRIVATE ${MBED_FLAGS})
+  PRIVATE ${MBED_WARNINGS_FLAGS} ${MBED_COVERAGE_FLAGS})
+
+target_link_options(${PROJECT_NAME}-tests
+  PRIVATE ${MBED_COVERAGE_FLAGS})
 
 target_compile_features(${PROJECT_NAME}
   PRIVATE cxx_std_17)
