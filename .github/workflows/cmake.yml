@@ -21,7 +21,7 @@ jobs:
       image: dtrussel/embedded-c-cpp-builder:main
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Build All
       run: ./build.sh
