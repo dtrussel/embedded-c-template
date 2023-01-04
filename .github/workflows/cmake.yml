@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: dtrussel/embedded-c-cpp-builder:main
-      options: -u developer
 
     steps:
     - uses: actions/checkout@v3
