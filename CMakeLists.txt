@@ -24,15 +24,6 @@ endif()
 # LIBRARY
 #####################################################################
 
-if(NOT MBED_DISABLE_CHECKS)
-set(CMAKE_C_CLANG_TIDY "clang-tidy;-checks=-*,bugprone-*")
-set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=-*,bugprone-*")
-set(CMAKE_C_CPPCHECK "cppcheck;--enable=style")
-set(CMAKE_CPP_CPPCHECK "cppcheck;--enable=style")
-set(CMAKE_C_CPPLINT "cpplint;--verbose=5")
-set(CMAKE_CXX_CPPLINT "cpplint;--verbose=5")
-endif()
-
 add_library(${PROJECT_NAME} STATIC
   src/mbed/containers/queue.c
   src/mbed/hash/crc32lookup.c)

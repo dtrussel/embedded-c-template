@@ -1,0 +1,15 @@
+set(CMAKE_ASM_COMPILER clang-16)
+set(CMAKE_C_COMPILER clang-16)
+set(CMAKE_CXX_COMPILER clang++-16)
+
+set(MBED_COVERAGE_FLAGS -fprofile-instr-generate -fcoverage-mapping)
+set(MBED_WARNINGS_FLAGS -Wall -Wextra -pedantic -Werror)
+
+if(NOT MBED_DISABLE_CHECKS)
+    set(CMAKE_C_CLANG_TIDY "clang-tidy-16;-checks=-*,bugprone-*")
+    set(CMAKE_CXX_CLANG_TIDY "clang-tidy-16;-checks=-*,bugprone-*")
+    set(CMAKE_C_CPPCHECK "cppcheck;--enable=style")
+    set(CMAKE_CPP_CPPCHECK "cppcheck;--enable=style")
+    set(CMAKE_C_CPPLINT "cpplint;--verbose=5")
+    set(CMAKE_CXX_CPPLINT "cpplint;--verbose=5")
+endif()
