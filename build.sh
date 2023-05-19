@@ -6,6 +6,7 @@ SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 BUILD_DIR=${SCRIPT_DIR}/build
 BUILD_DIR_NATIVE=${BUILD_DIR}/clang-x86_64-linux-gnu
 BUILD_DIR_TARGET=${BUILD_DIR}/gcc-arm-none-eabi
+BUILD_DIR_DOXYGEN=${BUILD_DIR}/doxygen
 
 # native build
 mkdir -p ${BUILD_DIR_NATIVE}
@@ -30,3 +31,9 @@ cmake -G Ninja -D CMAKE_TOOLCHAIN_FILE=${SCRIPT_DIR}/toolchain/gcc-arm-none-eabi
   -D MBED_DISABLE_TESTS=1 ${SCRIPT_DIR}
 ninja
 popd
+
+# build documentation
+mkdir -p ${BUILD_DIR_DOXYGEN}
+doxygen doc/doxygen/Doxyfile
+make -C doc/ clean
+make -C doc/ html

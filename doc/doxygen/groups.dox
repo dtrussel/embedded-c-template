@@ -1,0 +1,13 @@
+/**
+
+@defgroup containers Containers Module
+@brief Common data structures like queues, lists and stacks
+@{
+@}
+
+@defgroup hash Hash Module
+@brief Map data of arbitrary size to fixed-size values
+@{
+@}
+
+*/
