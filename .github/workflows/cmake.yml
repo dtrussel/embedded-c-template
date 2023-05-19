@@ -29,6 +29,9 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
       with:
-        name: coverage-report
-        path: build/coverage-report/
+        name: mbed-build-artifacts
+        path: |
+          build/coverage-report/
+          doc/build/html
+
       
