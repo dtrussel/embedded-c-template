@@ -34,5 +34,5 @@ jobs:
         path: |
           build/coverage-report/
           doc/build/html/
-          doc/build/latex/
+          doc/build/latex/mbedlibdocumentation.pdf
 
