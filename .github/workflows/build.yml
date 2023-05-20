@@ -33,6 +33,6 @@ jobs:
         name: mbed-build-artifacts
         path: |
           build/coverage-report/
-          doc/build/html
+          doc/build/html/
+          doc/build/latex/
 
-      

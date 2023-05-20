@@ -37,3 +37,4 @@ mkdir -p ${BUILD_DIR_DOXYGEN}
 doxygen doc/doxygen/Doxyfile
 make -C doc/ clean
 make -C doc/ html
+make -C doc/ latexpdf
