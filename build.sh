@@ -11,7 +11,7 @@ BUILD_DIR_DOXYGEN=${BUILD_DIR}/doxygen
 # native build
 mkdir -p ${BUILD_DIR_NATIVE}
 pushd ${BUILD_DIR_NATIVE}
-cmake -G Ninja -D CMAKE_TOOLCHAIN_FILE=${SCRIPT_DIR}/toolchain/clang-x86_64-linux-gnu.cmake -D CMAKE_EXPORT_COMPILE_COMMANDS=1 ${SCRIPT_DIR}
+cmake -G Ninja -D CMAKE_TOOLCHAIN_FILE=${SCRIPT_DIR}/toolchain/clang-x86_64-linux-gnuabi.cmake -D CMAKE_EXPORT_COMPILE_COMMANDS=1 ${SCRIPT_DIR}
 ninja
 popd
 
